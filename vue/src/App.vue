@@ -76,13 +76,14 @@ export default defineComponent({
       isCameraOpening: false,
       isCameraReady: false,
       isCapturing: false,
+      info: '', // Add this line
+      pipelines: '', // Add this line
       moduleVersion: pkg.version,
       isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent),
     }
   },
   mounted() {
     // https://github.com/vuejs/core/issues/8334
-    this.camera.addEventListener('detection', this.capture);
     this.camera.addEventListener('capture', this.capture);
     this.camera.addEventListener('beforeCapture', this.beforeCapture);
   },
@@ -93,16 +94,17 @@ export default defineComponent({
   },
   methods: {
     getApiVersion() {
-        return fetch('/idld_api/api_version') // Use /api prefix
+        return fetch('/idld_api/api_version')
         .then(response => {
             if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+              throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.json();
         })
         .then(data => {
             console.log('API Version:', data.version);
-            this.pipelines = data.availablePipelines.filter(pipeline => !pipeline.startsWith('default-')).join(','); // Filter and store the pipelines
+            // Filter and store the pipelines
+            this.pipelines = data.availablePipelines.filter((pipeline: string) => !pipeline.startsWith('default-')).join(',');
             this.info = `(${data.version}): ${this.pipelines}`
             return data.version;
         })

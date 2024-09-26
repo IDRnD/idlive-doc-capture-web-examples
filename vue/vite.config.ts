@@ -8,7 +8,7 @@ export default defineConfig({
     plugins: [vue({
         template: {
             compilerOptions: {
-                isCustomElement: (tag) => ['idlive-face-capture'].includes(tag),
+                isCustomElement: (tag) => ['idlive-document-capture'].includes(tag),
             }
         }
     })],

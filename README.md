@@ -1,5 +1,21 @@
 # idlive-document-capture-web
 
+## Running the Example
+
+To help you get started, we have provided an example for the popular Vue.js framework. Follow the steps below to run the example:
+
+1. Ensure you have the necessary prerequisites installed, such as Node.js and npm.
+2. Clone the repository and navigate to the project directory.
+3. Run the example using the following command, replacing `<path_to_capture_library>` and `<path_to_license_file>` with the actual paths to your capture library and license file:
+
+```bash
+./run_example vue <path_to_capture_library> <path_to_license_file>
+```
+
+This command will set up and run the example application, allowing you to see the document capture component in action within a Vue.js environment.
+
+Feel free to explore and modify the example to suit your needs.
+
 ## Installation
 
 Install node js latest version for [your system](https://nodejs.org/en/download/)
@@ -49,9 +65,9 @@ You can interact with the component using the following methods:
 5. `setLicense` - set license
 
 ```js
-const idlivedocumentCapture = document.querySelector('idlive-document-capture');
+const idliveDocCapture = document.querySelector('idlive-document-capture');
 
-idlivedocumentCapture.openCamera();
+idliveDocCapture.openCamera();
 ```
 
 ### Events
@@ -68,7 +84,7 @@ The component emits the following events:
 8. `error` - a critical error occurred
 
 ```js
-idlivedocumentCapture.addEventListener('initialize', (event) => {
+idliveDocCapture.addEventListener('initialize', (event) => {
     // the component is ready, now you can open camera
 });
 ```
