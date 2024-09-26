@@ -1,0 +1,16 @@
+/camera-module/node_modules/
+/camera-module/.idea/
+/camera-module/.stencil/
+/camera-module/dist/
+/example/react/node_modules/
+/example/react/.idea/
+/example/html/.idea/
+/example/angular/node_modules/
+/example/angular/.idea/
+/example/vue/node_modules/
+/example/vue/.idea/
+.idea/
+/dist/
+/camera-module/www/
+/dist/cameraModule/
+/.idea/
